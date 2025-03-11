@@ -8,6 +8,7 @@ This project implements a stock market prediction and recommendation system usin
 - Historical stock data is fetched using `yfinance`.
 - Stocks from the **BankNifty index** are selected.
 - Data is cleaned and structured for analysis.
+- One can change the stock ticker list and can get the same outputs for different stock lists like S&P 500, Nifty, etc
 
 ### 2️⃣ **Feature Engineering**
 - Technical indicators from the `ta` library are applied.
@@ -18,6 +19,7 @@ This project implements a stock market prediction and recommendation system usin
 - A binary classification target is created.
 - Stocks are labeled as **1** (buy signal) if price conditions are met within a future window.
 - Otherwise, they are labeled as **0**.
+- One can also generate a 'sell side' list by just commenting out the other target function in the notebook and commenting the buy side target code snippet
 
 ### 4️⃣ **Model Training & Evaluation**
 - Multiple machine learning models are trained for each stock.
@@ -30,40 +32,50 @@ This project implements a stock market prediction and recommendation system usin
 
 ## 🔍 Detailed Explanation
 ### **1️⃣ Model Evaluation Dictionary (`model_dict`)**
-`model_dict` stores evaluation results for each trained stock model.
+`model_dict` stores evaluation results for each trained stock model such as classification reports, confusion matrix, ROC curve, cross validation scores for test data as well as simulated stress tests, etc
 
 📌 **Sample Output:**  
-![Model Evaluation Output](path_to_screenshot_494.png)
+
+![Screenshot (494)](https://github.com/user-attachments/assets/9c420444-b611-49dc-b3a5-500e99081c5e)
+![Screenshot (495)](https://github.com/user-attachments/assets/33bba189-2478-4068-ad0a-197a302b54ff)
+![Screenshot (496)](https://github.com/user-attachments/assets/4fca5d16-a2d8-45bd-bec4-481f84600072)
+
+
+
 
 ### **2️⃣ Buy List (`buy_list`)**
 The `buy_list` contains stocks that passed technical and model-based filters.
 
 📌 **Sample Output:**  
-![Buy List Output](path_to_screenshot_497.png)
+![Screenshot (497)](https://github.com/user-attachments/assets/5229980b-bae6-48a5-ab22-487e34f722e7)
+
 
 ### **3️⃣ Recommendations (`recommendations`)**
-The recommendations list suggests the best stocks to invest in based on model performance and analysis.
+The recommendations list suggests the best stocks to invest in based on related stocks from the same sector(used Nifty 500 here) and with high correlation with the stocks in buy_list
 
 📌 **Sample Output:**  
-![Recommendations Output](path_to_screenshot_498.png)
+![Screenshot (498)](https://github.com/user-attachments/assets/9efcef4b-5cc5-477b-8961-5f51abbbd405)
+
 
 ### **4️⃣ Sentiment Score & Analysis**
-The sentiment score assesses market news and trends.
+The sentiment score assesses market news and trends using crew ai, site scrapping, agentic ai.
 
 📌 **Sample Output:**  
-![Sentiment Analysis Output](path_to_screenshot_ssa.png)
+![screenshot ssa](https://github.com/user-attachments/assets/75662e11-8de4-4701-a3e4-b54726c60de0)
+
 
 ### **5️⃣ Final Stock Recommendation**
 The final stock recommendation is based on model confidence and sentiment analysis.
 
 📌 **Sample Output:**  
-![Final Stock Recommendation](path_to_screenshot_499.png)
+![Screenshot (499)](https://github.com/user-attachments/assets/316af6fc-ebcc-4a73-ad4c-e1d685996607)
+
 
 ## 🔗 Technologies Used
 - **Python** (Pandas, NumPy, scikit-learn, yfinance, ta, optuna)
-- **Machine Learning** (Random Forest, XGBoost, Logistic Regression, etc.)
-- **Sentiment Analysis**
-- **Finance & Quantitative Analysis**
+- **Machine Learning** (XGBoost Classifier)
+- **Sentiment Analysis** (crew ai, BeautifulSoup)
+- **Finance & Quantitative Analysis** (correlation, target defining)
 
 ## 📈 Flowchart
 ```mermaid
