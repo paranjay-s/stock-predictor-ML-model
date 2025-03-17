@@ -1,4 +1,4 @@
-# Stock Market Prediction and Recommendation System
+# Stock Predictor and Recommendation System
 
 ## 📌 Overview
 This project implements a stock market prediction and recommendation system using machine learning and sentiment analysis. The notebook fetches stock data, processes it, trains predictive models, evaluates them, and generates stock recommendations. The model primarily focuses on **BankNifty** stocks.
